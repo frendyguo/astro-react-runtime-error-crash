@@ -1,0 +1,11 @@
+---
+import ReactComp from '../components/react-comp';
+
+const foo = { bar: null } as unknown as { bar: { baz: string[] } };
+---
+
+<!-- React component has to error first -->
+<ReactComp foo={foo} />
+{ foo.bar.baz.length > 0 && (
+  <div />
+)}
